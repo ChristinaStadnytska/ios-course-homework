@@ -11,30 +11,40 @@ import UIKit
 class NoteDetailViewController: UIViewController {
     
     @IBOutlet weak var noteName: UITextField!
-    
     @IBOutlet weak var noteText: UITextField!
-    var object = Note(date: Date(), name: "", text: "")
+    @IBOutlet weak var noteTag: UITextField!
+    
+    var object: Note?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "saveSegue"{
-            object = Note(date: Date(), name: noteText.text!, text: noteName.text!)
+        if segue.identifier == "saveNote",
+            let unwrappedName = noteName.text,
+            let unwrappedText = noteText.text, let unwrappedTag = noteTag.text{
+            object = Note(date: Date(), name: unwrappedName, text: unwrappedText, tagArray: [unwrappedTag])
+            }
         }
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // *** Border Style for TextField of Name ***
+        
+        self.noteName.layer.borderColor = UIColor(red: 196/255, green: 194/255, blue: 194/255, alpha: 0.8).cgColor
+        self.noteName.layer.borderWidth = CGFloat(Float(1.0))
+        self.noteName.layer.cornerRadius = CGFloat(Float(5.0))
+        
+        
+        // *** Border Style for TextField of Text ***
+        
+        self.noteText.layer.borderColor = UIColor(red: 196/255, green: 194/255, blue: 194/255, alpha: 0.8).cgColor
+        self.noteText.layer.borderWidth = CGFloat(Float(1.0))
+        self.noteText.layer.cornerRadius = CGFloat(Float(5.0))
+        
+        
+        // *** Border Style for TextField of Tags ***
+        
+        self.noteTag.layer.borderColor = UIColor(red: 196/255, green: 194/255, blue: 194/255, alpha: 0.8).cgColor
+        self.noteTag.layer.borderWidth = CGFloat(Float(1.0))
+        self.noteTag.layer.cornerRadius = CGFloat(Float(5.0))
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

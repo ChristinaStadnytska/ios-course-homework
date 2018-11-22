@@ -83,8 +83,8 @@
 			children = (
 				22F49AB821A219E70016AEC7 /* AppDelegate.swift */,
 				22F49ABA21A219E70016AEC7 /* ViewController.swift */,
-				22F49ABC21A219E70016AEC7 /* Main.storyboard */,
 				22F2EA7D21A2B8BF006A838C /* NoteDetailViewController.swift */,
+				22F49ABC21A219E70016AEC7 /* Main.storyboard */,
 				22F49AC221A219E80016AEC7 /* Assets.xcassets */,
 				22F49AC421A219E80016AEC7 /* LaunchScreen.storyboard */,
 				22F49AC721A219E80016AEC7 /* Info.plist */,

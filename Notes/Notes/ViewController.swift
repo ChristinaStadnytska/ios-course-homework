@@ -9,29 +9,31 @@
 import UIKit
 class Note{
     var date: Date
-    var name: String
-    var text: String
+    var name: String?
+    var text: String?
+    var tagArray: [String?]
+   // var image: UIImage
     
-    init(date: Date, name: String, text: String) {
+    init(date: Date, name: String, text: String, tagArray: [String]) {
         self.date = Date()
         self.name = name
         self.text = text
+        self.tagArray = tagArray
+        
     }
+    
 }
 var note = [Note]()
-var newNote = Note(date: Date(), name: "", text: "")
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var ListOfNotes: UITableView!
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return note.count
     }
-    
-    
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
@@ -45,25 +47,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(note[indexPath.row])
     }
     
-    
-    
-    @IBAction func cancel(segue: UIStoryboardSegue){
+    @IBAction func cancel(_ segue: UIStoryboardSegue){
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func save(segue: UIStoryboardSegue){
-        let noteDetailVC = segue.source as! NoteDetailViewController
-        newNote = noteDetailVC.object
+    @IBAction func save(_ segue: UIStoryboardSegue){
+        guard let noteDetailsVC = segue.source as? NoteDetailViewController,
+            let newNote = noteDetailsVC.object else {return}
         
         note.append(newNote)
+        let indexPath = IndexPath(row: note.count - 1, section: 0)
+        ListOfNotes.insertRows(at: [indexPath], with: .automatic)
+    }
+    
+    private func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            note.remove(at: indexPath.row)
+        }
         ListOfNotes.reloadData()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+            ListOfNotes.delegate = self
+            ListOfNotes.dataSource = self
+        self.imageView.contentMode = .scaleAspectFit
+        self.imageView.layer.cornerRadius = 10
     }
-
 
 }
 
