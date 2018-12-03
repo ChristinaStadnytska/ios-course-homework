@@ -6,6 +6,7 @@
 //  Copyright © 2018 macos. All rights reserved.
 //
 
+// Винеси Note в окремий файл
 class Note{
     var date: Date
     var name: String?
@@ -20,11 +21,16 @@ class Note{
         self.tagArray = tagArray
     }
 }
+
+// 1. Чому у нас масив ноутів НЕ у вью контроллері, а як загальна змінна ?
+// 2. Чому він пустий ? Добав хоча б 10 тестових Ноутів
 var note = [Note]()
 
 
 import UIKit
 
+
+// Пернеіменуй клас і файл у ListViewController
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
@@ -39,9 +45,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let info = segue.destination as? InfoNoteViewController{
-        info.object = note[(tblNote.indexPathForSelectedRow?.row)!]
-        tblNote.deselectRow(at: tblNote.indexPathForSelectedRow!, animated: true)
+        if let info = segue.identifier as? InfoNoteViewController{
+            info.object = note[(tblNote.indexPathForSelectedRow?.row)!]
+            tblNote.deselectRow(at: tblNote.indexPathForSelectedRow!, animated: true)
+        }
+        
+        
+        if segue.identifier == "segueAdd" {
+            let destinationVC = segue.destination as! AddNoteViewController
+            destinationVC.delegate = self
         }
     }
     
@@ -60,11 +72,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tblNote.delegate = self
         tblNote.dataSource = self
         
+        // Не треба робити релоад ТВ зразу, вона і так почне сама зтягувати данні
         tblNote.reloadData()
         
+    }
+}
+
+
+extension ViewController: NoteManagingDelegate {
+    func save(_ note: Note) {
+        // Реалізуй добавляння нової Ноути у масив Ноутів
+        
+        // і розкоментуй наступну стрічку
+        //tblNote.reloadData()
     }
 }
 

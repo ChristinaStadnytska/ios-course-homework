@@ -8,20 +8,13 @@
 
 import UIKit
 
+
+// Винеси VCTableViewCell у xib файл з такою ж назвою
+// Тримати цели у Сторіборді погана ідея
+
 class VCTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var imageCell: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-       
-    }
 
 }

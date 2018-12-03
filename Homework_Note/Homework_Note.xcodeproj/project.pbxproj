@@ -15,6 +15,7 @@
 		22F8704121B543A500DAF3C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F8703F21B543A500DAF3C5 /* LaunchScreen.storyboard */; };
 		22F8704921B554CD00DAF3C5 /* VCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8704821B554CD00DAF3C5 /* VCTableViewCell.swift */; };
 		22F8704B21B566CA00DAF3C5 /* InfoNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8704A21B566CA00DAF3C5 /* InfoNoteViewController.swift */; };
+		5582855421B5BEB100223B56 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582855321B5BEB100223B56 /* AddNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		22F8704221B543A500DAF3C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22F8704821B554CD00DAF3C5 /* VCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTableViewCell.swift; sourceTree = "<group>"; };
 		22F8704A21B566CA00DAF3C5 /* InfoNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNoteViewController.swift; sourceTree = "<group>"; };
+		5582855321B5BEB100223B56 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				22F8703321B543A200DAF3C5 /* AppDelegate.swift */,
 				22F8703521B543A200DAF3C5 /* ViewController.swift */,
+				5582855321B5BEB100223B56 /* AddNoteViewController.swift */,
 				22F8703721B543A200DAF3C5 /* Main.storyboard */,
 				22F8704A21B566CA00DAF3C5 /* InfoNoteViewController.swift */,
 				22F8704821B554CD00DAF3C5 /* VCTableViewCell.swift */,
@@ -146,6 +149,7 @@
 			files = (
 				22F8704921B554CD00DAF3C5 /* VCTableViewCell.swift in Sources */,
 				22F8703621B543A200DAF3C5 /* ViewController.swift in Sources */,
+				5582855421B5BEB100223B56 /* AddNoteViewController.swift in Sources */,
 				22F8703C21B543A300DAF3C5 /* Homework_Note.xcdatamodeld in Sources */,
 				22F8704B21B566CA00DAF3C5 /* InfoNoteViewController.swift in Sources */,
 				22F8703421B543A200DAF3C5 /* AppDelegate.swift in Sources */,
