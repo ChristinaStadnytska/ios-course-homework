@@ -58,21 +58,21 @@
                     <navigationItem key="navigationItem" title="Notes" id="B7T-To-F5F">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wfv-t8-p7s">
                             <connections>
-                                <segue destination="hcv-px-00h" kind="presentation" id="O3Z-9P-1cg"/>
+                                <action selector="goToAdd:" destination="NWS-6c-JD4" id="Jh5-YN-JE1"/>
+                                <segue destination="hcv-px-00h" kind="presentation" identifier="toAdd" id="cpT-6f-rwm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17I-hB-ZSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NWS-6c-JD4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-287.19999999999999" y="62.518740629685162"/>
         </scene>
         <!--Note Detail View Controller-->
         <scene sceneID="hRN-vF-o6Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e4w-WE-YBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="EwN-VT-Mwg" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="hcv-px-00h" customClass="NoteDetailViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CdK-hU-FHZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -137,13 +137,14 @@
                         <outlet property="noteText" destination="bU8-AD-hCT" id="14p-zz-sH5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4w-WE-YBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EwN-VT-Mwg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="418" y="63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rGs-Sg-pAf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rj2-V1-wQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Y9x-17-OV4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cfc-pF-CUy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -153,6 +154,7 @@
                         <segue destination="API-8y-umo" kind="relationship" relationship="rootViewController" id="ryf-U1-16A"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rj2-V1-wQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-967" y="63"/>
         </scene>

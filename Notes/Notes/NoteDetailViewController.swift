@@ -8,7 +8,10 @@
 
 import UIKit
 
-class NoteDetailViewController: UIViewController {
+protocol AddProtocol: class {
+    func prepare(for segue: UIStoryboardSegue, sender: Any?)
+}
+class NoteDetailViewController: UIViewController, AddProtocol {
     
     @IBOutlet weak var noteName: UITextField!
     @IBOutlet weak var noteText: UITextField!
@@ -17,7 +20,7 @@ class NoteDetailViewController: UIViewController {
     var object: Note?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "saveNote",
+        if segue.identifier == "toAdd",
             let unwrappedName = noteName.text,
             let unwrappedText = noteText.text, let unwrappedTag = noteTag.text{
             object = Note(date: Date(), name: unwrappedName, text: unwrappedText, tagArray: [unwrappedTag])

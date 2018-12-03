@@ -25,11 +25,13 @@ class Note{
 }
 var note = [Note]()
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddProtocol {
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var ListOfNotes: UITableView!
+    
+    weak var delegate:AddProtocol?
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return note.count
@@ -47,8 +49,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(note[indexPath.row])
     }
     
+    
+ 
+    
     @IBAction func cancel(_ segue: UIStoryboardSegue){
-        dismiss(animated: true, completion: nil)
+        if segue.identifier == "toAdd" {        dismiss(animated: true, completion: nil)}
     }
     
     @IBAction func save(_ segue: UIStoryboardSegue){
@@ -71,6 +76,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
             ListOfNotes.delegate = self
             ListOfNotes.dataSource = self
+        
         self.imageView.contentMode = .scaleAspectFit
         self.imageView.layer.cornerRadius = 10
     }
