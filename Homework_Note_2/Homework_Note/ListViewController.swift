@@ -11,15 +11,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var note = [Note]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //note = [Note(date: Date(), name: "2nd note", text: "2nd text...", tagArray: ["tags"])]
-        tblNote.delegate = self
-        tblNote.dataSource = self
-        
-    }
-    
     @IBOutlet weak var tblNote: UITableView!
     
     @IBAction func goToAddNote(_ sender: Any) {
@@ -44,7 +35,14 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //note = [Note(date: Date(), name: "2nd note", text: "2nd text...", tagArray: ["tags"])]
+        tblNote.delegate = self
+        tblNote.dataSource = self
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return note.count
@@ -58,8 +56,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
-    
-    
 }
 
 
