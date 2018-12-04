@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VCTableViewCell" customModule="Homework_Note" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="103" id="gW6-QY-Z7g" customClass="VCTableViewCell" customModule="Homework_Note" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="103"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gW6-QY-Z7g" id="MYK-S8-AKP" customClass="VCTableViewCell" customModule="Homework_Note" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="102.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DTm-Wv-LwJ">
+                        <rect key="frame" x="16" y="11" width="113" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="DTm-Wv-LwJ" secondAttribute="height" multiplier="113:81" id="X97-yx-Oh9"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm3-Ja-AcO">
+                        <rect key="frame" x="137" y="32" width="104" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Sm3-Ja-AcO" secondAttribute="height" multiplier="52:19" id="OFL-pA-RE5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Sm3-Ja-AcO" secondAttribute="bottom" constant="22" id="1Ta-ei-beL"/>
+                    <constraint firstItem="DTm-Wv-LwJ" firstAttribute="top" secondItem="MYK-S8-AKP" secondAttribute="topMargin" id="72u-NP-9x5"/>
+                    <constraint firstItem="DTm-Wv-LwJ" firstAttribute="leading" secondItem="MYK-S8-AKP" secondAttribute="leadingMargin" id="Jec-Vx-aKq"/>
+                    <constraint firstItem="Sm3-Ja-AcO" firstAttribute="top" secondItem="MYK-S8-AKP" secondAttribute="topMargin" constant="21" id="eOJ-g8-JjN"/>
+                    <constraint firstItem="DTm-Wv-LwJ" firstAttribute="bottom" secondItem="MYK-S8-AKP" secondAttribute="bottomMargin" id="pew-yC-FSo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Sm3-Ja-AcO" secondAttribute="trailing" constant="113" id="qiG-hn-qb5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageCell" destination="DTm-Wv-LwJ" id="LOB-cl-D8i"/>
+                <outlet property="labelCell" destination="Sm3-Ja-AcO" id="2xD-JK-MXb"/>
+            </connections>
+            <point key="canvasLocation" x="577.60000000000002" y="-261.31934032983509"/>
+        </tableViewCell>
+    </objects>
+</document>

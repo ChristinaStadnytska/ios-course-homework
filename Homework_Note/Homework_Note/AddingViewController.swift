@@ -6,35 +6,25 @@
 //  Copyright © 2018 macos. All rights reserved.
 //
 
-/*import UIKit
-
-protocol SaveDataDelegate: class {
-    func saved(_ sender: AddingViewController)
-}
+import UIKit
 
 class AddingViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: UITextField!
-    @IBOutlet weak var textLabel: UITextField!
-    @IBOutlet weak var tagsLabel: UITextField!
-    
-    var saveObject: Note?
-    var delegate: SaveDataDelegate?
-    
-    func prepareNewNote(note: Note){
-        saveObject = note
-        if let unwrappedName = nameLabel.text, let unwrappedText = textLabel.text, let unwrappedTags = tagsLabel.text{
-            saveObject = Note(date: Date(), name: unwrappedName, text: unwrappedText, tagArray: [unwrappedTags])
-        }
-    }
-    
-    @IBAction func saveButton(_ sender: Any) {
-        delegate?.saved(self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // Do any additional setup after loading the view.
     }
-}*/
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
