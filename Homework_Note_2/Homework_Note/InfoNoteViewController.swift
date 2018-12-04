@@ -14,6 +14,8 @@ class InfoNoteViewController: UIViewController {
     
     var object: Note?
     
+    ///skjghdvvsgukfguksgfusgfu
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
