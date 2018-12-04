@@ -22,7 +22,10 @@ class InfoNoteViewController: UIViewController {
         noteLabel.text = "(\((object?.date)!) \n\((object?.name)!) \n\((object?.text)!) \n\((object?.tagArray)!))"
     }
     
+    //ahkchaukgckugauckv
     
+    
+    ///aldjagukcghjkwbc
     
     
 }
